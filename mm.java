@@ -1,12 +1,15 @@
-package com.by.phone.p89;
+package com.example.mohyuof;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +24,7 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends Activity {
+public class MainActivity3 extends AppCompatActivity {
 
     private ArrayList<HashMap<String, Object>> list_map = new ArrayList<>();
     private LinearLayout linear3;
@@ -38,13 +41,10 @@ public class MainActivity extends Activity {
     private SharedPreferences phone;
 
     @Override
-    protected void onCreate(Bundle _savedInstanceState) {
-        super.onCreate(_savedInstanceState);
-        setContentView(R.layout.main);
-        initialize(_savedInstanceState);
-        initializeLogic();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main3);
     }
-
     private void initialize(Bundle _savedInstanceState) {
         linear3 = findViewById(R.id.linear3);
         linear6 = findViewById(R.id.linear6);
@@ -61,22 +61,20 @@ public class MainActivity extends Activity {
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View _view) {
+            public void onClick(View v) {
                 linear9.setVisibility(View.VISIBLE);
                 linear6.setVisibility(View.GONE);
                 linear8.setVisibility(View.GONE);
             }
         });
-
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View _view) {
+            public void onClick(View v) {
                 linear6.setVisibility(View.VISIBLE);
                 linear8.setVisibility(View.GONE);
                 linear9.setVisibility(View.GONE);
             }
         });
-
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View _view) {
@@ -85,7 +83,6 @@ public class MainActivity extends Activity {
                 linear9.setVisibility(View.GONE);
             }
         });
-
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View _view) {
@@ -109,8 +106,7 @@ public class MainActivity extends Activity {
 
             }
         });
-    }
-
+}
     private void initializeLogic() {
         _setCornerRadius(edittext1, 50, "#616161");
         _setCornerRadius(edittext3, 50, "#616161");
@@ -215,3 +211,6 @@ public class MainActivity extends Activity {
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
     }
 }
+
+
+
